@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as posenet from '@tensorflow-models/posenet';
+import * as posedetection from '@tensorflow-models/pose-detection';
 
 const PoseDetection = () => {
   const videoRef = useRef(null);
@@ -12,7 +13,23 @@ const PoseDetection = () => {
   useEffect(() => {
     const runPoseDetection = async () => {
       tf.setBackend('webgl'); // or 'wasm' or 'cpu'
-      const net = await posenet.load();
+
+      const architecture = 'MobileNetV1'; // Specify the architecture (MobileNetV1 or ResNet50)
+      const outputStride = 16; // Specify the output stride (8, 16, or 32)
+      const inputResolution = { width: 500, height: 500 }; // Specify the input resolution
+      const multiplier = 0.75; // Specify the multiplier (1.0, 0.75, or 0.50)
+      const quantBytes = 4; // Specify the quantization bytes (4, 2, or 1)
+    
+      const modelConfig = {
+        architecture,
+        outputStride,
+        inputResolution,
+        multiplier,
+        quantBytes,
+      };
+    
+      const net = await posenet.load(modelConfig);
+
       const video = videoRef.current;
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');

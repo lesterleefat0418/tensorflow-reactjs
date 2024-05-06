@@ -1,10 +1,10 @@
 import './App.css';
-import UserPose from './MediaPose';
+import UserPose from './PoseLighting';
 
 function App() {
   return (
     <div className="App">
-      <h1>Pose Detection</h1>
+      <h1>Pose Detection-Tfjs</h1>
       <UserPose />
     </div>
   );
