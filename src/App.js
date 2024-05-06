@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import PoseDetection from './PoseDetection';
+import UserPose from './MediaPose';
 
 function App() {
   return (
     <div className="App">
       <h1>Pose Detection</h1>
-      <PoseDetection />
+      <UserPose />
     </div>
   );
 }
