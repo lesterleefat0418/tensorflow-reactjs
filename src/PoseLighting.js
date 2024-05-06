@@ -14,9 +14,10 @@ const PoseDetection = () => {
   useEffect(() => {
     const runPoseDetection = async () => {
       tf.setBackend('webgl'); // or 'wasm' or 'cpu'
+      
 
-      const architecture = 'MobileNetV2'; // Specify the architecture (MobileNetV1 or ResNet50)
-      const outputStride = 16; // Specify the output stride (8, 16, or 32)
+      const architecture = 'MobileNetV1'; // Specify the architecture (MobileNetV1 or ResNet50)
+      const outputStride = 8; // Specify the output stride (8, 16, or 32)
 
       const multiplier = 0.75; // Specify the multiplier (1.0, 0.75, or 0.50)
       const quantBytes = 4; // Specify the quantization bytes (4, 2, or 1)
@@ -80,7 +81,7 @@ const PoseDetection = () => {
           // Draw the keypoints
           //console.log(pose.keypoints);
           pose.keypoints.forEach((keypoint) => {
-            if (keypoint.score >= 0.4) {
+            if (keypoint.score >= 0.3) {
                 //console.log(keypoint);
 
               // Draw a circle at the keypoint position relative to the video element
