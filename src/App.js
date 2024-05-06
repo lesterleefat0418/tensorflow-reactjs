@@ -4,7 +4,7 @@ import UserPose from './PoseLighting';
 function App() {
   return (
     <div className="App">
-      <h1>Pose Detection-Movenet</h1>
+      <h1>Pose Detection-Movenet-lighting</h1>
       <UserPose />
     </div>
   );

@@ -16,19 +16,19 @@ const PoseDetection = () => {
       tf.setBackend('webgl'); // or 'wasm' or 'cpu'
       
 
-      const architecture = 'MobileNetV1'; // Specify the architecture (MobileNetV1 or ResNet50)
+      /*const architecture = 'MobileNetV1'; // Specify the architecture (MobileNetV1 or ResNet50)
       const outputStride = 8; // Specify the output stride (8, 16, or 32)
 
       const multiplier = 0.75; // Specify the multiplier (1.0, 0.75, or 0.50)
-      const quantBytes = 4; // Specify the quantization bytes (4, 2, or 1)
+      const quantBytes = 4; // Specify the quantization bytes (4, 2, or 1)*/
     
       const modelConfig = {
-        modelType: posedetection.movenet.modelType.SINGLEPOSE_LIGHTNING,
-        architecture,
+        modelType: posedetection.movenet.modelType.SINGLEPOSE_LIGHTNING
+        /*architecture,
         outputStride,
         inputResolution,
         multiplier,
-        quantBytes,
+        quantBytes,*/
       };
     
       const detector = await posedetection.createDetector(posedetection.SupportedModels.MoveNet, modelConfig);
