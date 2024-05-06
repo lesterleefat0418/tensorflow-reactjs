@@ -27,7 +27,7 @@ const UserPose = () => {
 
       canvasElement.width = videoWidth;
       canvasElement.height = videoHeight;
-      
+
       canvasCtx.save();
       canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
@@ -58,7 +58,7 @@ const UserPose = () => {
       });
 
       pose.setOptions({
-        modelComplexity: 1,
+        modelComplexity: 0,
         smoothLandmarks: true,
         enableSegmentation: false, // Disable segmentation mask
         minDetectionConfidence: 0.5,
