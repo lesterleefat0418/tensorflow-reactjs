@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as posedetection from '@tensorflow-models/pose-detection';
+import '@tensorflow/tfjs-backend-webgpu';
 
 const PoseDetection = () => {
   const videoRef = useRef(null);
@@ -11,7 +12,7 @@ const PoseDetection = () => {
 
   useEffect(() => {
     const runPoseDetection = async () => {
-      tf.setBackend('webgl');
+      tf.setBackend('webgpu');
 
       const modelConfig = {
         modelType: posedetection.movenet.modelType.SINGLEPOSE_LIGHTNING,
@@ -54,6 +55,8 @@ const PoseDetection = () => {
         // Draw the keypoints
         pose.keypoints.forEach((keypoint) => {
           if (keypoint.score >= 0.3) {
+
+            console.log(keypoint);
             // Draw a circle at the keypoint position relative to the video element
             const videoElement = videoRef.current;
             const videoWidth = videoElement.videoWidth;
