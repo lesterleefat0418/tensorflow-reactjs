@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tensorflow-reactjs/static/css/main.f855e6bc.css",
-    "main.js": "/tensorflow-reactjs/static/js/main.d0fc2940.js",
+    "main.js": "/tensorflow-reactjs/static/js/main.9d58dd0f.js",
     "static/js/453.194d3cc9.chunk.js": "/tensorflow-reactjs/static/js/453.194d3cc9.chunk.js",
     "index.html": "/tensorflow-reactjs/index.html",
     "main.f855e6bc.css.map": "/tensorflow-reactjs/static/css/main.f855e6bc.css.map",
-    "main.d0fc2940.js.map": "/tensorflow-reactjs/static/js/main.d0fc2940.js.map",
+    "main.9d58dd0f.js.map": "/tensorflow-reactjs/static/js/main.9d58dd0f.js.map",
     "453.194d3cc9.chunk.js.map": "/tensorflow-reactjs/static/js/453.194d3cc9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.d0fc2940.js"
+    "static/js/main.9d58dd0f.js"
   ]
 }
